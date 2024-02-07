@@ -4,7 +4,7 @@ const TextBox = (props) => {
     return(
         <div className="text-box">
             <label>{props.label}</label>
-            <input placeholder={props.placeholder}></input>
+            <input required={props.required} placeholder={props.placeholder}></input>
         </div>
     );
 }
