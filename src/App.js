@@ -8,16 +8,16 @@ function App() {
 
   const [workers, setWorkers] = useState([])
 
-  const onNewWorkerAdd = (worker) => {
+  const onWorkerAdd = (worker) => {
     console.log(worker)
-    setWorkers(...workers, worker)
+    setWorkers([...workers, worker])
   }
 
   return (
     <div className="App">
       <Banner />
       <Form
-        onWorkerRegister={worker => onNewWorkerAdd(worker)}
+        onWorkerRegister={worker => onWorkerAdd(worker)}
       />
     </div>
   );
