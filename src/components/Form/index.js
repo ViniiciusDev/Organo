@@ -6,16 +6,6 @@ import "./Form.css";
 
 const Form = (props) => {
 
-    const teams = [
-        "Programação",
-        "Front-End",
-        "Data Science",
-        "Devops",
-        "UX e Design",
-        "Mobile",
-        "Inovação e Gestão"
-    ];
-
     const [name, setName] = useState('')
     const [rule, setRule] = useState('')
     const [image, setImage] = useState('')
@@ -29,6 +19,11 @@ const Form = (props) => {
             image,
             team
         })
+
+        setName('')
+        setRule('')
+        setImage('')
+        setTeam('')
         console.log('Form send =>', name, rule, image, team);
     }
 
@@ -60,7 +55,7 @@ const Form = (props) => {
                 <DropDown 
                     required={true} 
                     label="Time" 
-                    itens={teams}
+                    itens={props.teams}
                     value={team}
                     onChanged={value => setTeam(value)}
                     />
